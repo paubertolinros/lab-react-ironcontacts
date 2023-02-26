@@ -22,8 +22,6 @@ function App() {
       //no podria fer el map, no? (línia 13)
     }
   };
-  console.log("contaxts",contacts)
-  console.log("...contactc", [...contacts])
 
   const handleSortByName = () => {
     const sortByName = [...contacts].sort((a, b) => a.name.localeCompare(b.name));
