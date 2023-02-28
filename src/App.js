@@ -49,36 +49,44 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Iron Contacts</h1>
-      <button className="button-random-contact" onClick={handleAddRandomContact}> Add Random Contact </button>
-      <button className="button-random-contact" onClick={handleSortByName}> Sort by Name </button>
-      <button className="button-random-contact" onClick={handleSortPopularity}> Sort by Popularity </button>
-      <table>
-        <thead>
-          <tr>
-            <th>Picture</th>
-            <th>Name</th>
-            <th>Popularity</th>
-            <th>Won Oscar</th>
-            <th>Won Emmy</th>
-            <th>Actions</th>
-          </tr>  
-        </thead>
-        <tbody>
-        {contacts.map(elem => {
-          return (
-        <tr key={elem.id}>
-          <td><img className="contact-photo" src={elem.pictureUrl} alt="{elem.name}"/></td>
-          <td>{elem.name}</td>
-          <td>{elem.popularity.toFixed(2)}</td>
-          <td>{elem.wonOscar ? "🏆" : null}</td>
-          <td>{elem.wonEmmy ? "🏆" : null}</td>  
-          <td><button className="button-random-contact" onClick={() => handleDeleteContact(elem.id)}> Delete </button></td>    
-        </tr>
-            )
-        })}
-        </tbody>
-      </table>
+      <section className="i-c-section">
+        <h1>Iron Contacts</h1>
+        <section className="buttons-section">
+          <button className="button-random-contact" onClick={handleAddRandomContact}> Add Random Contact </button>
+          <button className="button-random-contact" onClick={handleSortByName}> Sort by Name </button>
+          <button className="button-random-contact" onClick={handleSortPopularity}> Sort by Popularity </button>
+        </section>
+        <section>
+          <table>
+            <thead>
+              <tr>
+                <th>Picture</th>
+                <th>Name</th>
+                <th>Popularity</th>
+                <th>Won Oscar</th>
+                <th>Won Emmy</th>
+                <th>Actions</th>
+              </tr>  
+            </thead>
+            <tbody>
+            {contacts.map(elem => {
+              return (
+            <tr key={elem.id}>
+              <td><img className="contact-photo" src={elem.pictureUrl} alt="{elem.name}"/></td>
+              <td>{elem.name}</td>
+              <td>{elem.popularity.toFixed(2)}</td>
+              {/* <td>{elem.wonOscar ? "🏆" : null}</td> */}
+              {elem.wonOscar ? <td className="won">★</td> : <td></td>} 
+              {/* <td>{elem.wonEmmy ? "🏆" : null}</td> */}
+              {elem.wonEmmy ? <td className="won">★</td> : <td></td>} 
+              <td><button className="button-random-contact" onClick={() => handleDeleteContact(elem.id)}> Delete </button></td>    
+            </tr>
+                )
+            })}
+            </tbody>
+          </table>
+        </section>
+      </section>
     </div>
   );
 }

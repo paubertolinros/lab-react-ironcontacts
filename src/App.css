@@ -1,3 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&display=swap');
+
+@font-face {
+  font-family: lemonMilk;
+  src: url("../public/fonts/LEMONMILK-Light.otf")
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+}
+
+h1 {
+  font-family: lemonMilk;
+  font-size: 40px;
+}
+
+th {
+  font-family: lemonMilk;
+}
+
+section.i-c-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+section.i-c-section section.buttons-section {
+  display: flex;
+  gap: 18px;
+  margin: 20px 0 30px 0;
+}
+
+button {
+  border: none;
+  padding: 10px 10px;
+}
+
+table {
+  padding: 20px 0;
+  border: 0.5px solid #efefef
+}
+
+th, td {
+  width: 150px;
+  text-align: center;
+  padding: 5px;
+}
+
 td img.contact-photo {
-  width: 60px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.won {
+  background-color: #efefef;
 }
